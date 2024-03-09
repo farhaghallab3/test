@@ -32,13 +32,9 @@ class _CreatePostState extends State<Posts> {
           height: double.infinity,
           child: Stack(
             children: [
-    
-              SizedBox(
-                height: 35,
-              ),
                 //post layer Open
               ListView(
-                padding: EdgeInsets.symmetric(vertical: 100),
+                padding: EdgeInsets.symmetric(vertical: 10),
                 children: [
                   FriendPost(
                     proPic: 'assets/images/profile.png',
