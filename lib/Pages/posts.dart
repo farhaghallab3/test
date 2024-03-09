@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:grad_proj/Domain/customAppBar.dart';
+import 'package:grad_proj/Pages/createPost.dart';
 import 'package:grad_proj/pages/commentsPage.dart';
 
 
@@ -89,6 +90,16 @@ class _CreatePostState extends State<Posts> {
             ],
           ),
         ),
+         floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const CreatePost()));
+        },
+        backgroundColor: const Color(0xFFBBA2BF),
+        shape: const CircleBorder(),
+        child: const Icon(Icons.add),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       ),
     );
   }

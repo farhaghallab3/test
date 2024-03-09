@@ -26,12 +26,12 @@ class _CommentsPageState extends State<CommentsPage> {
 
   //list for the profile pics of the users
   List<String> profilePic = [
-    'assets/images/categories/man.png',
-    'assets/images/categories/man2.png',
-    'assets/images/categories/woman.png',
-    'assets/images/categories/woman2.png',
-    'assets/images/categories/man3.png',
-    'assets/images/categories/man4.png',
+    'assets/images/profile.png',
+    'assets/images/profile.png',
+    'assets/images/profile.png',
+    'assets/images/profile.png',
+    'assets/images/profile.png',
+    'assets/images/profile.png',
   ];
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 

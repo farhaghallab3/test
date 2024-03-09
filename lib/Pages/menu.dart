@@ -99,6 +99,7 @@ class Menu extends StatelessWidget {
                     }
                   },
                 ),
+                const Divider(),
                 ListTile(
                   leading: const Icon(Icons.person_outlined),
                   title: const Text(

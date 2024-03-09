@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:grad_proj/Domain/user_provider.dart';
 import 'package:grad_proj/Pages/pagesUser/reqCategory.dart';
 import 'package:grad_proj/Pages/pagesWorker/workerRequest.dart';
+import 'package:grad_proj/Pages/splashscreen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       create: (_) => UserProvider(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: WorkerRequest(),
+        home: SplashScreen(),
       ),
     );
    
