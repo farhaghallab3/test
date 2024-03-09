@@ -1,14 +1,9 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-
-import '../../Domain/bottom.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:grad_proj/Domain/bottom.dart';
 
 class SignUpUser extends StatelessWidget {
-  SignUpUser({super.key});
-
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  const SignUpUser({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +14,6 @@ class SignUpUser extends StatelessWidget {
           height: double.infinity,
           child: Stack(
             children: [
-              // //purple foreground
               Positioned(
                 top: 0,
                 right: 0,
@@ -29,7 +23,6 @@ class SignUpUser extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              //Menu button
               Positioned(
                 left: 3,
                 top: 9,
@@ -43,8 +36,6 @@ class SignUpUser extends StatelessWidget {
                       size: 40,
                     )),
               ),
-
-              // App Title
               Positioned(
                 top: 15,
                 left: 0,
@@ -53,7 +44,6 @@ class SignUpUser extends StatelessWidget {
                   child: SvgPicture.asset("assets/images/MR. House.svg"),
                 ),
               ),
-              // App Icon
               Positioned(
                 right: 15,
                 top: 15,
@@ -62,7 +52,6 @@ class SignUpUser extends StatelessWidget {
                   backgroundImage: AssetImage('assets/images/FixxIt.png'),
                 ),
               ),
-              // Centered Rectangle with User Inputs
               Center(
                 child: Container(
                   width: 320,
@@ -119,7 +108,8 @@ class SignUpUser extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: "Quando",
                               fontWeight: FontWeight.bold,
-                            ),
+
+),
                           ),
                         ),
                         SizedBox(height: 7),
@@ -160,10 +150,18 @@ class SignUpUser extends StatelessWidget {
                         SizedBox(height: 10),
                         ElevatedButton(
                           onPressed: () {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text('Sign up successful'),
+                                duration: Duration(seconds: 3),
+                              ),
+                            );
                             Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => BottomNavBarUser()));
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => BottomNavBarUser(),
+                              ),
+                            );
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color(0xFFBBA2BF),
@@ -184,6 +182,7 @@ class SignUpUser extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 5),
+                        // Sign up with Facebook or Google
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -199,7 +198,8 @@ class SignUpUser extends StatelessWidget {
                               'assets/images/facebook.svg',
                               width: 30,
                               height: 30,
-                              color: Color.fromARGB(255, 173, 148, 177),
+
+color: Color.fromARGB(255, 173, 148, 177),
                             ),
                             SvgPicture.asset(
                               'assets/images/google.svg',

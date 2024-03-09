@@ -1,13 +1,12 @@
-// ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:grad_proj/Domain/WokerBottomNavBar.dart';
+import 'package:grad_proj/Domain/bottom.dart';
 import 'package:grad_proj/Pages/pagesWorker/workerRequest.dart';
 
-
-
 class SignUpWorker extends StatelessWidget {
-  const SignUpWorker({super.key});
+  const SignUpWorker({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +17,6 @@ class SignUpWorker extends StatelessWidget {
           height: double.infinity,
           child: Stack(
             children: [
-              //purple foreground
               Positioned(
                 top: 0,
                 right: 0,
@@ -28,7 +26,6 @@ class SignUpWorker extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              //Menu button
               Positioned(
                 left: 3,
                 top: 9,
@@ -42,8 +39,6 @@ class SignUpWorker extends StatelessWidget {
                       size: 40,
                     )),
               ),
-
-              // App Title
               Positioned(
                 top: 15,
                 left: 0,
@@ -52,7 +47,6 @@ class SignUpWorker extends StatelessWidget {
                   child: SvgPicture.asset("assets/images/MR. House.svg"),
                 ),
               ),
-              // App Icon
               Positioned(
                 right: 15,
                 top: 15,
@@ -61,7 +55,6 @@ class SignUpWorker extends StatelessWidget {
                   backgroundImage: AssetImage('assets/images/FixxIt.png'),
                 ),
               ),
-              // Centered Rectangle with User Inputs
               Center(
                 child: Container(
                   width: 320,
@@ -80,11 +73,11 @@ class SignUpWorker extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          'Sign Up AS WORKER',
+                          'Sign Up AS Worker',
                           style: TextStyle(
                             fontFamily: "Quando",
                             color: Color.fromARGB(255, 173, 148, 177),
-                            fontSize: 22,
+                            fontSize: 24,
                             fontWeight: FontWeight.w300,
                           ),
                         ),
@@ -118,7 +111,9 @@ class SignUpWorker extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: "Quando",
                               fontWeight: FontWeight.bold,
-                            ),
+
+
+),
                           ),
                         ),
                         SizedBox(height: 7),
@@ -159,10 +154,13 @@ class SignUpWorker extends StatelessWidget {
                         SizedBox(height: 10),
                         ElevatedButton(
                           onPressed: () {
-                           Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => WorkerRequest()));
+                           
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => WorkerRequest(),
+                              ),
+                            );
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Color(0xFFBBA2BF),
@@ -175,7 +173,7 @@ class SignUpWorker extends StatelessWidget {
                             ),
                           ),
                           child: Text(
-                            "Next",
+                            "Sign Up",
                             style: TextStyle(
                               fontSize: 17,
                               color: Colors.grey[850],
@@ -183,6 +181,7 @@ class SignUpWorker extends StatelessWidget {
                           ),
                         ),
                         SizedBox(height: 5),
+                        // Sign up with Facebook or Google
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -198,7 +197,9 @@ class SignUpWorker extends StatelessWidget {
                               'assets/images/facebook.svg',
                               width: 30,
                               height: 30,
-                              color: Color.fromARGB(255, 173, 148, 177),
+
+
+color: Color.fromARGB(255, 173, 148, 177),
                             ),
                             SvgPicture.asset(
                               'assets/images/google.svg',
