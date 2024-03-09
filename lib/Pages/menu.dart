@@ -150,7 +150,10 @@ class Menu extends StatelessWidget {
                     style: TextStyle(color: Colors.white, fontSize: 13),
                   ),
                   onTap: () {
-                    // Handle information tap
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AboutApp()),
+                    );
                   },
                 ),
                 const Divider(),
