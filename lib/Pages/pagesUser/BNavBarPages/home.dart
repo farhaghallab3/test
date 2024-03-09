@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:grad_proj/Pages/pagesUser/BNavBarPages/workerslist.dart';
+import 'package:provider/provider.dart';
+import 'package:the_proj_on_github/Pages/pagesUser/BNavBarPages/workerslist.dart';
 
 
 
 import '../../../Domain/customAppBar.dart';
+import '../../../Domain/themeNotifier.dart';
 import '../../menu.dart';
 import '../reqCategory.dart';
 
@@ -62,11 +64,11 @@ class HomeState extends State<Home> {
         children: [
           Padding(
             padding:
-                const EdgeInsets.only(top: 20, left: 15, right: 15, bottom: 20),
+            const EdgeInsets.only(top: 20, left: 15, right: 15, bottom: 20),
             child: Container(
               padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: context.watch<ThemeNotifier>().isDarkModeEnabled ? Colors.grey[800] : Colors.white,
                 borderRadius: BorderRadius.circular(15),
                 boxShadow: [
                   BoxShadow(
