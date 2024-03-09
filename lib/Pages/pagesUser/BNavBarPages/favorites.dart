@@ -75,7 +75,7 @@ class Favorites extends StatelessWidget {
                         ),
                       ),
                       pageIndex: 1,
-                      onPressed: () => navigateToPage1(context, WorkerReview()),
+                      onPressed: () => navigateToPage1(context, WorkerReview(previousPage: 'Fav',)),
                     );
                   },
                 ),

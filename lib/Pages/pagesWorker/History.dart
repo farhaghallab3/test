@@ -5,6 +5,7 @@ import 'package:grad_proj/Domain/customAppBar.dart';
 import 'package:grad_proj/Domain/listItem.dart';
 import 'package:grad_proj/Pages/menu.dart';
 import 'package:grad_proj/Pages/pagesUser/BNavBarPages/workerslist.dart';
+import 'package:grad_proj/Pages/pagesUser/toqaHistoryUser.dart';
 import 'package:grad_proj/Pages/pagesUser/workerReview.dart';
 import 'package:grad_proj/Pages/pagesWorker/toqaHistoryWorker.dart';
 
@@ -214,7 +215,7 @@ class _HistoryWorkerState extends State<HistoryWorker> {
                             padding: const EdgeInsets.only(right: 10),
                             child: Image.asset("assets/images/Siren2.png"),
                           ),
-                    onPressed: () => navigateToPage1(context, WorkerReview()),
+                    onPressed: () => navigateToPage1(context, WorkerHistoryPage()),
                     pageIndex: 3,
                   );
                 },

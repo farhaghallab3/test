@@ -57,7 +57,7 @@ class HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      appBar: CustomAppBar(scaffoldKey: _scaffoldKey,showSearchBox: true,),
+      appBar: CustomAppBar(scaffoldKey: _scaffoldKey),
       body: ListView(
         children: [
           Padding(

@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:grad_proj/Pages/pagesUser/toqaHistoryUser.dart';
 import 'package:grad_proj/Pages/pagesUser/workerReview.dart';
+import 'package:grad_proj/Pages/pagesWorker/toqaHistoryWorker.dart';
 
 
 import '../../Domain/customAppBar.dart';
@@ -215,7 +216,7 @@ class History extends StatelessWidget {
                             padding: const EdgeInsets.only(right: 10),
                             child: Image.asset("assets/images/Siren2.png"),
                           ),
-                    onPressed: () => navigateToPage1(context, WorkerReview()),
+                    onPressed: () => navigateToPage1(context, UserHistoryPage()),
                     pageIndex: 3,
                   );
                 },

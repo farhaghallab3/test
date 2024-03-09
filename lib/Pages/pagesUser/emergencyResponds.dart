@@ -56,50 +56,7 @@ class _ERespondsState extends State<EmergencyResponds> {
             width: double.infinity,
             height: double.infinity,
             child: Stack(children: [
-              //purple foreground
-              //       Positioned(
-              //         top: 0,
-              //         right: 0,
-              //         left: 0,
-              //         child: SvgPicture.asset(
-              //           "assets/images/foregroundPurpleSmall.svg",
-              //           fit: BoxFit.cover,
-              //         ),
-              //       ),
-              //       //Menu button
-              //       Positioned(
-              //         left: 3,
-              //         top: 9,
-              //         child: IconButton(
-              //             onPressed: () {
-              //               // Navigator.pushNamed(context, "/signup");
-              //             },
-              //             icon: Icon(
-              //               Icons.arrow_back,
-              //               color: Colors.white,
-              //               size: 40,
-              //             )),
-              //       ),
-              //       //Mr. house word
-              //       Positioned(
-              //         top: 15,
-              //         left: 0,
-              //         right: 0,
-              //         child: Center(
-              //           child: SvgPicture.asset("assets/images/MR. House.svg"),
-              //         ),
-              //       ),
-              //
-              //       //profile pic
-              //       Positioned(
-              //         right: 15,
-              //         top: 15,
-              //         child: CircleAvatar(
-              //           radius: 25, // Adjust radius as needed
-              //           backgroundImage: AssetImage('assets/images/profile.png'),
-              //         ),
-              //       ),
-
+             
               SizedBox(
                 height: 35,
               ),
@@ -141,7 +98,7 @@ class _ERespondsState extends State<EmergencyResponds> {
                         padding: const EdgeInsets.only(right: 10),
                         child: Image.asset("assets/images/Siren.png"),
                       ),
-                      onPressed: () => navigateToPage1(context, WorkerReview()),
+                      onPressed: () => navigateToPage1(context, WorkerReview(previousPage: 'Emergency',)),
                       pageIndex: 4,
                     );
                   },

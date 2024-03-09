@@ -80,7 +80,7 @@ class WorkersList extends StatelessWidget {
                     return ListItem(
                       worker: worker[itemCount],
                        pageIndex: 0,
-                        onPressed: () => navigateToPage1(context,WorkerReview()),
+                        onPressed: () => navigateToPage1(context,WorkerReview(previousPage: 'WorkersList',)),
                        
                     );
                   },

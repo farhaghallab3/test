@@ -1,7 +1,8 @@
 // ignore: file_names
 
 import 'package:flutter/material.dart';
-
+import 'package:grad_proj/Pages/pagesUser/BNavBarPages/workerslist.dart';
+import 'package:grad_proj/Pages/pagesUser/emergencyResponds.dart';
 
 import '../../Domain/customAppBar.dart';
 import '../menu.dart';
@@ -408,7 +409,8 @@ class _ReqEmergencyState extends State<ReqEmergency> {
                                     style: TextStyle(fontSize: 10),
                                   ),
                                   onPressed: () {
-                                    //Handle button tap
+                                    navigateToPage1(
+                                        context, EmergencyResponds());
                                   },
                                 ),
                               ),

@@ -2,12 +2,17 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:grad_proj/Domain/bottom.dart';
 import 'package:grad_proj/Domain/customAppBar.dart';
 import 'package:grad_proj/Pages/menu.dart';
+import 'package:grad_proj/Pages/pagesUser/BNavBarPages/home.dart';
 import 'package:grad_proj/req.dart';
 
 class WorkerReview extends StatefulWidget {
-  const WorkerReview({Key? key}) : super(key: key);
+  final String previousPage;
+
+  const WorkerReview({Key? key, required this.previousPage}) : super(key: key);
+  
   static String routeName = 'workerreview';
 
   @override
@@ -198,14 +203,16 @@ class _WorkerReviewState extends State<WorkerReview> {
               maxLines: null, // Allow multiple lines for longer comments
             ),
             ElevatedButton(
-              onPressed: () {
-                if (_reviewController.text.isNotEmpty) {
-                  setState(() {
-                    reviews.add(_reviewController.text);
-                    _reviewController.clear();
-                  });
-                }
-              },
+           onPressed: () {
+    if (_reviewController.text.isNotEmpty) {
+      setState(() {
+        reviews.add(_reviewController.text);
+        _reviewController.clear();
+      });
+
+  
+    }
+  },
                style: ElevatedButton.styleFrom(
                                 backgroundColor: Color(0xFFBBA2BF),
                               
@@ -243,11 +250,22 @@ class _WorkerReviewState extends State<WorkerReview> {
                  children: [
                    ElevatedButton(
                               onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Req()));
-                              },
+                                  if (widget.previousPage == 'WorkersList' || widget.previousPage == 'Fav' ) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => Req()),
+        );
+      } else if (widget.previousPage == 'Emergency') {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => BottomNavBarUser()),
+      );
+    }else  {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => Home()),
+      );
+    }                              },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Color(0xFFBBA2BF),
                                 padding: EdgeInsets.symmetric(

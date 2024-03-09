@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grad_proj/Domain/customAppBar.dart';
 import 'package:grad_proj/Pages/menu.dart';
+import 'package:grad_proj/Pages/pagesUser/BNavBarPages/home.dart';
 import 'package:grad_proj/Pages/pagesUser/BNavBarPages/responds.dart';
 import 'package:grad_proj/Pages/pagesUser/BNavBarPages/workerslist.dart';
 import 'package:grad_proj/Pages/pagesUser/reqCategory.dart';
@@ -24,7 +25,7 @@ class _ReqState extends State<Req> {
         key: _scaffoldKey,
         appBar: CustomAppBar(
           scaffoldKey: _scaffoldKey,
-          showSearchBox: true,
+       
         ),
         body: SizedBox(
             width: double.infinity,
@@ -249,7 +250,7 @@ class _ReqState extends State<Req> {
                                 ),
                                 child: const Text('Book'),
                                 onPressed: () {
-                                  navigateToPage1(context, const Responds());
+                                  navigateToPage1(context, const  Home());
                                 },
                               ),
                             ),
