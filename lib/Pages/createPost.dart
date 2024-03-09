@@ -158,7 +158,7 @@ class _CreatePostState extends State<CreatePost> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Container(
+                        SizedBox(
                           width: 100, // تحديد العرض حسب الحاجة
                           height: 50, // تحديد الارتفاع حسب الحاجة
                           child: TextButton(
@@ -202,7 +202,7 @@ class _CreatePostState extends State<CreatePost> {
   }) {
     return Column(
       children: <Widget>[
-        Container(
+        SizedBox(
           width: double.infinity,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,

@@ -116,7 +116,7 @@ final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Container(
+                        SizedBox(
                           width: 100, // تحديد العرض حسب الحاجة
                           height: 50, // تحديد الارتفاع حسب الحاجة
                           child: TextButton(
@@ -158,7 +158,7 @@ final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   }) {
     return Column(
       children: <Widget>[
-        Container(
+        SizedBox(
           width: double.infinity,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,

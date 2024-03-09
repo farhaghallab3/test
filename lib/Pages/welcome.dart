@@ -8,7 +8,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
 class Welcome extends StatelessWidget {
-  const Welcome({Key? key});
+  const Welcome({super.key});
   
    
 
@@ -78,7 +78,7 @@ class Welcome extends StatelessWidget {
                             );
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: const Color(0xFFBBA2BF),
+                            backgroundColor: const Color(0xFFBBA2BF),
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -107,7 +107,7 @@ class Welcome extends StatelessWidget {
                             );
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: const Color(0xFFBBA2BF),
+                            backgroundColor: const Color(0xFFBBA2BF),
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,

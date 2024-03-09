@@ -7,6 +7,8 @@ import '../menu.dart';
 class WorkerHistoryPage extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
+  WorkerHistoryPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -206,7 +208,7 @@ class WorkerHistoryPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                Container(
+                SizedBox(
                   width: 300,
                   child: TextField(
                     obscureText: true,

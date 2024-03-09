@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../Domain/bottom.dart';
-import '../../Domain/customAppBar.dart';
 
 class SignUpUser extends StatelessWidget {
   SignUpUser({super.key});

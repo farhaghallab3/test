@@ -2,11 +2,8 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:grad_proj/Domain/customAppBar.dart';
-import 'package:grad_proj/Pages/pagesUser/MenuUser.dart';
 import 'package:grad_proj/pages/commentsPage.dart';
-import 'package:grad_proj/pages/createPost.dart';
 
 
 class Posts extends StatefulWidget {

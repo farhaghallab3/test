@@ -1,18 +1,16 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:grad_proj/Domain/CustomNabBar.dart';
 import 'package:grad_proj/Domain/customAppBar.dart';
 import 'package:grad_proj/Domain/listItem.dart';
 import 'package:grad_proj/Pages/menu.dart';
 import 'package:grad_proj/Pages/pagesUser/BNavBarPages/workerslist.dart';
 import 'package:grad_proj/Pages/pagesUser/workerReview.dart';
-import 'package:grad_proj/Pages/pagesWorker/menu.dart';
-import 'package:grad_proj/Pages/pagesWorker/UserReview.dart';
 import 'package:grad_proj/Pages/pagesWorker/toqaHistoryWorker.dart';
 
 class HistoryWorker extends StatefulWidget {
+  const HistoryWorker({super.key});
+
   @override
   _HistoryWorkerState createState() => _HistoryWorkerState();
 }
@@ -143,7 +141,7 @@ class _HistoryWorkerState extends State<HistoryWorker> {
                     fontWeight: FontWeight.w500,
                     fontFamily: "Raleway",
                     color: Colors.black,
-                    shadows: [
+                    shadows: const [
                       Shadow(
                         color: Colors.black12,
                         offset: Offset(2, 2),
@@ -187,7 +185,7 @@ class _HistoryWorkerState extends State<HistoryWorker> {
                     fontWeight: FontWeight.w500,
                     fontFamily: "Raleway",
                     color: Colors.black,
-                    shadows: [
+                    shadows: const [
                       Shadow(
                         color: Colors.black12,
                         offset: Offset(2, 2),

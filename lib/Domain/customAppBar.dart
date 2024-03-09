@@ -13,9 +13,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Size get preferredSize {
     if (showSearchBox) {
-      return Size.fromHeight(90.0); // Height when search box is showing
+      return const Size.fromHeight(90.0); // Height when search box is showing
     } else {
-      return Size.fromHeight(60.0); // Height when search box is not showing
+      return const Size.fromHeight(60.0); // Height when search box is not showing
     }
   }
 
@@ -23,8 +23,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       automaticallyImplyLeading: false, // This removes the back button
-      backgroundColor: Color(0xFFBBA2BF),
-      shape: RoundedRectangleBorder(
+      backgroundColor: const Color(0xFFBBA2BF),
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(15),
           bottomRight: Radius.circular(15),
@@ -42,18 +42,18 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               size: 40,
             ),
           ),
-          Spacer(), // Add space to center the image
+          const Spacer(), // Add space to center the image
           Image.asset(
             'assets/images/MR. House.png',
             width: 80, // Adjust width as needed
             height: 60, // Adjust height as needed
           ), // Replace 'MR. House.png' with your image asset path
-          Spacer(), // Add space to separate the image and the profile picture
+          const Spacer(), // Add space to separate the image and the profile picture
           GestureDetector(
             onTap: () {
               // Handle profile picture tap
             },
-            child: CircleAvatar(
+            child: const CircleAvatar(
               radius: 20, // Adjust radius as needed
               backgroundImage: AssetImage(
                 'assets/images/profile.png',
@@ -65,10 +65,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       // Conditionally add the search box based on the showSearchBox parameter
       bottom: showSearchBox
           ? PreferredSize(
-        preferredSize: Size.fromHeight(0),
+        preferredSize: const Size.fromHeight(0),
         child: Expanded(
           child: Padding(
-            padding: EdgeInsets.all(6.0),
+            padding: const EdgeInsets.all(6.0),
             child: TextField(
             decoration: InputDecoration(
                         labelText: "Search technican name",

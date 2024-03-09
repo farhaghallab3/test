@@ -6,6 +6,8 @@ import 'package:grad_proj/Domain/customAppBar.dart';
 
 class UserHistoryPage extends StatelessWidget {
    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
+  UserHistoryPage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -189,7 +191,7 @@ class UserHistoryPage extends StatelessWidget {
                 ],
               ),
              
-                Container(
+                SizedBox(
                   width: 300,
                   child: TextField(
                             obscureText: true,

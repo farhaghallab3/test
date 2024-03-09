@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grad_proj/Domain/WokerBottomNavBar.dart';
 import 'package:grad_proj/Domain/bottom.dart';
 import 'package:grad_proj/Domain/user_provider.dart';
-import 'package:grad_proj/Pages/pagesWorker/home.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
-import 'package:grad_proj/Pages/pagesUser/BNavBarPages/home.dart';
-import 'package:grad_proj/Pages/pagesUser/BNavBarPages/workerslist.dart';
 import 'package:grad_proj/Pages/pagesUser/history.dart';
 import 'package:grad_proj/Pages/pagesUser/reqEmergency.dart';
 import 'package:grad_proj/Pages/pagesUser/userinfo.dart';
@@ -95,10 +92,10 @@ class Menu extends StatelessWidget {
 
                     if (isUser==true) {
                       PersistentNavBarNavigator.pushNewScreen(context,
-                          screen: BottomNavBarUser(), withNavBar: false);
+                          screen: const BottomNavBarUser(), withNavBar: false);
                     } else {
                       PersistentNavBarNavigator.pushNewScreen(context,
-                          screen: BottomNavBarWorker(), withNavBar: false);
+                          screen: const BottomNavBarWorker(), withNavBar: false);
                     }
                   },
                 ),
@@ -114,7 +111,7 @@ class Menu extends StatelessWidget {
 
                     if (isUser) {
                       PersistentNavBarNavigator.pushNewScreen(context,
-                          screen: Cutomerinfo(), withNavBar: false);
+                          screen: const Cutomerinfo(), withNavBar: false);
                     } else {
                       // Handle worker profile tap
                     }
@@ -141,7 +138,7 @@ class Menu extends StatelessWidget {
                   ),
                   onTap: () {
                     PersistentNavBarNavigator.pushNewScreen(context,
-                        screen: ReqEmergency(), withNavBar: false);
+                        screen: const ReqEmergency(), withNavBar: false);
                   },
                 ),
                 const Divider(),
@@ -174,10 +171,10 @@ class Menu extends StatelessWidget {
                       foregroundColor: const Color.fromARGB(234, 0, 0, 0),
                       backgroundColor: Colors.white,
                     ),
-                    child: Text('Log Out'),
+                    child: const Text('Log Out'),
                     onPressed: () {
                       PersistentNavBarNavigator.pushNewScreen(context,
-                          screen: Welcome(), withNavBar: false);
+                          screen: const Welcome(), withNavBar: false);
                     },
                   ),
                 ),

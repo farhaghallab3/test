@@ -20,9 +20,9 @@ class _BottomNavBarWorkerState extends State<BottomNavBarWorker> {
   List<Widget> screens() {
     return [
       HomeWorker(),
-      AdminChat(),
+      const AdminChat(),
       alartsWorker(),
-      Posts(),
+      const Posts(),
     ];
   }
 

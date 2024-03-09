@@ -123,12 +123,12 @@ class History extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Map<String, dynamic>> recentWorkers = getRecentWorkers();
     List<Map<String, dynamic>> previousRequests = getPreviousRequests();
-    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+    final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
     return SafeArea(
       child: Scaffold(
-        key: _scaffoldKey,
-        appBar: CustomAppBar(scaffoldKey: _scaffoldKey,showSearchBox: false,),
+        key: scaffoldKey,
+        appBar: CustomAppBar(scaffoldKey: scaffoldKey,showSearchBox: false,),
         body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -223,7 +223,7 @@ class History extends StatelessWidget {
             ],
           ),
         ),
-        drawer: Menu(scaffoldKey: _scaffoldKey,),
+        drawer: Menu(scaffoldKey: scaffoldKey,),
       ),
     );
   
