@@ -100,6 +100,9 @@ class _CreatePostState extends State<Posts> {
         child: const Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+        drawer: Menu(
+          scaffoldKey: _scaffoldKey,
+        ),
       ),
     );
   }
