@@ -46,6 +46,7 @@ dependencies:
   provider: ^6.1.2
   flutter_local_notifications: ^16.3.3
   fluttertoast: ^8.1.2
+  permission_handler: ^11.3.0
 
  
   
