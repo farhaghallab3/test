@@ -1,11 +1,11 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:grad_proj/Domain/user_provider.dart';
-import 'package:grad_proj/Pages/pagesUser/reqCategory.dart';
-import 'package:grad_proj/Pages/pagesWorker/workerRequest.dart';
-import 'package:grad_proj/Pages/splashscreen.dart';
 import 'package:provider/provider.dart';
+import 'package:the_proj_on_github/Domain/themeNotifier.dart';
+
+import 'Domain/user_provider.dart';
+import 'Pages/splashscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,13 +17,28 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => UserProvider(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: SplashScreen(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (context) => UserProvider()),
+        ChangeNotifierProvider(create: (context) => ThemeNotifier()),
+      ],
+      child:  Consumer<ThemeNotifier>(
+        builder: (context, themeNotifier, child){
+          return MaterialApp(
+            theme: ThemeData(
+              brightness: themeNotifier.isDarkModeEnabled
+                  ? Brightness.dark
+                  : Brightness.light,
+            ),
+            darkTheme: ThemeData(
+              brightness: Brightness.dark,
+            ),
+            debugShowCheckedModeBanner: false,
+            home: SplashScreen(),
+          );
+        },
       ),
     );
-   
+
   }
 }
