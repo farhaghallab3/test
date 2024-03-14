@@ -1,11 +1,10 @@
 // Remove the unused import statements
 import 'package:flutter/material.dart';
-
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:grad_proj/Domain/customAppBar.dart';
-import 'package:grad_proj/Pages/menu.dart';
-
-import 'package:grad_proj/Pages/pagesWorker/History.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gradproj/Domain/customAppBar.dart';
+import 'package:gradproj/Pages/adminchat.dart';
+import 'package:gradproj/Pages/menu.dart';
+import 'package:gradproj/Pages/pagesWorker/History.dart';
 
 
 class Workererinfo extends StatefulWidget {
@@ -16,18 +15,54 @@ class Workererinfo extends StatefulWidget {
 }
 
 class _WorkererinfoState extends State<Workererinfo> {
-    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        key: _scaffoldKey,
-        appBar: CustomAppBar(scaffoldKey: _scaffoldKey,showSearchBox: false,),
+         appBar: CustomAppBar(
+          scaffoldKey: _scaffoldKey,
+          showSearchBox: false,
+        ),
+       drawer: Menu(scaffoldKey: _scaffoldKey,),
         body: SizedBox(
           width: double.infinity,
           height: double.infinity,
           child: Stack(
             children: [
+// // Purple foreground
+//               Positioned(
+//                 top: 0,
+//                 right: 0,
+//                 left: 0,
+//                 child: SvgPicture.asset(
+//                   "assets/images/foregroundPurpleSmall.svg",
+//                   fit: BoxFit.cover,
+//                 ),
+//               ),
+
+//               // Menu button
+//               Positioned(
+//                 top: 13,
+//                 child: IconButton(
+                 
+//                   icon: const Icon(
+//                     Icons.menu,
+//                     color: Colors.white,
+//                     size: 40,
+//                   ),
+//                 ),
+//               ),
+
+//               // Mr. house word
+//               Positioned(
+//                 top: 15,
+//                 left: 0,
+//                 right: 0,
+//                 child: Center(
+//                   child: SvgPicture.asset("assets/images/MR. House.svg"),
+//                 ),
+//               ),
 
               // Profile Information Details
               Positioned(
@@ -40,7 +75,7 @@ class _WorkererinfoState extends State<Workererinfo> {
                     children: [
                       // Profile Image
                       const CircleAvatar(
-                        radius: 55,
+                        radius: 50,
                         backgroundImage:
                             AssetImage("assets/images/profile.png"),
                       ),
@@ -50,11 +85,11 @@ class _WorkererinfoState extends State<Workererinfo> {
                       const Text(
                         "John Doe",
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(height: 8),
+                      const SizedBox(height: 6),
 
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -83,7 +118,7 @@ class _WorkererinfoState extends State<Workererinfo> {
                             child: const Text(
                               "Lorem ipsum dolor sit amet, sed scelerisque eros consectetur.",
                               style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 14,
                               ),
                             ),
                           ),
@@ -114,7 +149,7 @@ class _WorkererinfoState extends State<Workererinfo> {
                             child: const Text(
                               "01224047524",
                               style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 12,
                               ),
                             ),
                           ),
@@ -138,7 +173,7 @@ class _WorkererinfoState extends State<Workererinfo> {
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 5),
+                              const SizedBox(height: 4),
 
                               // Worker email Text
                               Container(
@@ -147,11 +182,11 @@ class _WorkererinfoState extends State<Workererinfo> {
                                 child: const Text(
                                   "johndoe@example.com",
                                   style: TextStyle(
-                                    fontSize: 16,
+                                    fontSize: 12,
                                   ),
                                 ),
                               ),
-                              const SizedBox(height: 16),
+                              const SizedBox(height: 14),
                             ],
                           ),
                         ],
@@ -170,7 +205,7 @@ class _WorkererinfoState extends State<Workererinfo> {
                               title: Text(
                                 "Rating:",
                                 style: TextStyle(
-                                  fontSize: 16,
+                                  fontSize: 14,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -189,17 +224,41 @@ class _WorkererinfoState extends State<Workererinfo> {
                         ),
                       ),
 
-                      const SizedBox(height: 16),
-
+                      const SizedBox(height: 10),
                       const SizedBox(
-                        height: 20,
+                        height: 12,
                         child: Row(
                           children: [],
                         ),
                       ),
 
-                      // Social Media Icons in Row
-                      const SizedBox(height: 16),
+
+Column(
+  crossAxisAlignment: CrossAxisAlignment.start,
+  children: [
+    InkWell(
+      onTap: () {
+        // Handle tap on the message icon
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const AdminChat()));
+      },
+      child: Container(
+        margin: const EdgeInsets.only(left: 16), // Increased the left margin
+        child: const Tooltip(
+          message: "Admin Chat",
+          child: ListTile(
+            leading: Icon(Icons.message_rounded),
+          ),
+        ),
+      ),
+    ),
+    const SizedBox(height: 8),
+  ],
+),
+
+
+
+  // Social Media Icons in Row
+                      const SizedBox(height: 10),
                       SizedBox(
                         height: 50,
                         child: Row(
@@ -209,9 +268,7 @@ class _WorkererinfoState extends State<Workererinfo> {
                             ElevatedButton(
                               onPressed: () {
                                 Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>const HistoryWorker ()));
+context,MaterialPageRoute(  builder: (context) =>const HistoryWorker ()));
                                 // Add your logic for the "Show Orders" button here
                               },
                               style: ElevatedButton.styleFrom(
@@ -225,33 +282,11 @@ class _WorkererinfoState extends State<Workererinfo> {
                                 ),
                               ),
                             ),
-
-                            // WhatsApp
-                            IconButton(
-                              onPressed: () {
-                                // Add your WhatsApp logic here
-                              },
-                              icon: _buildSocialMediaIcon(0),
-                            ),
-
-                            // Messenger
-                            IconButton(
-                              onPressed: () {
-                                // Add your Messenger logic here
-                              },
-                              icon: _buildSocialMediaIcon(1),
-                            ),
-
-                            // Telegram
-                            IconButton(
-                              onPressed: () {
-                                // Add your Telegram logic here
-                              },
-                              icon: _buildSocialMediaIcon(2),
-                            ),
                           ],
                         ),
                       ),
+
+
                     ],
                   ),
                 ),
@@ -259,29 +294,8 @@ class _WorkererinfoState extends State<Workererinfo> {
             ],
           ),
         ),
-        drawer: Menu(scaffoldKey: _scaffoldKey,),
       ),
     );
-  }
-
-  Widget _buildSocialMediaIcon(int index) {
-    List<IconData> icons = [
-      FontAwesomeIcons.whatsapp,
-      FontAwesomeIcons.facebookMessenger,
-      FontAwesomeIcons.telegram,
-    ];
-
-    List<Color> colors = [
-      Colors.green,
-      Colors.blue,
-      Colors.lightBlue,
-    ];
-
-    return FaIcon(
-      icons[index],
-      size: 30,
-      color: colors[index],
-    );
-    
+  
   }
 }
