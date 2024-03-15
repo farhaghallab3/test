@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grad_proj/Domain/CustomNabBar.dart';
 
 
 
@@ -39,9 +40,14 @@ class _CommentsPageState extends State<CommentsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      appBar: CustomAppBar(scaffoldKey: _scaffoldKey, showSearchBox: false),
+
+
+      appBar: CustomNabBar(scaffoldKey: _scaffoldKey, showSearchBox: false,arrowBack: true,),
+
+
       body: ListView(
         children: [
+
           SingleChildScrollView(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -186,9 +192,10 @@ class _CommentsPageState extends State<CommentsPage> {
           ),
         ],
       ),
-      drawer: Menu(
-        scaffoldKey: _scaffoldKey,
-      ),
+     // drawer: Menu(
+       // scaffoldKey: _scaffoldKey,
+      //),
+
     );
   }
 }
