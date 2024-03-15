@@ -7,7 +7,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     Key? key,
     required this.scaffoldKey,
-    this.showSearchBox = false, // Default value is false
+    this.showSearchBox = false,
+    required GlobalKey<ScaffoldState> scaffoldKeyU, // Default value is false
   }) : super(key: key);
 
   @override
