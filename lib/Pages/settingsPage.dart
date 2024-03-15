@@ -1,9 +1,11 @@
 // ignore_for_file: prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:grad_proj/Domain/CustomNabBar.dart';
+import 'package:grad_proj/Domain/themeNotifier.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
-import 'package:the_proj_on_github/Domain/themeNotifier.dart';
+
 
 import '../Domain/customAppBar.dart';
 import 'menu.dart';
@@ -35,15 +37,15 @@ class _SettingPageState extends State<SettingsPage> {
     return SafeArea(
       child: Scaffold(
         key: _scaffoldKey,
-        appBar: CustomAppBar(
-          scaffoldKey: _scaffoldKey,
-          showSearchBox: false,
-        ),
+        appBar: CustomNabBar(scaffoldKey: _scaffoldKey, showSearchBox: false,arrowBack: true,),
+
+
         body: SingleChildScrollView(
           child: Consumer<ThemeNotifier>(
             builder: (context, themeNotifier, child) {
               return Column(
                 children: [
+
                   ListTile(
                     leading: const CircleAvatar(child: Icon(Icons.mic)),
                     onTap: () async {
@@ -159,9 +161,9 @@ class _SettingPageState extends State<SettingsPage> {
             },
           ),
         ),
-        drawer: Menu(
-          scaffoldKey: _scaffoldKey,
-        ),
+        //drawer: Menu(
+          //scaffoldKey: _scaffoldKey,
+        //),
       ),
     );
   }
