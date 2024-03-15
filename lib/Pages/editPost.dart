@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:grad_proj/Domain/CustomNabBar.dart';
 import 'package:grad_proj/Domain/customAppBar.dart';
 import 'package:grad_proj/Pages/menu.dart';
 
@@ -28,13 +29,17 @@ final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
     return SafeArea(
       child: Scaffold(
         key: _scaffoldKey,
-        appBar: CustomAppBar(scaffoldKey: _scaffoldKey,showSearchBox: false,),
-         drawer: Menu(scaffoldKey: _scaffoldKey,),
+
+
+        appBar: CustomNabBar(scaffoldKey: _scaffoldKey, showSearchBox: false,arrowBack: true,),
+
+        //drawer: Menu(scaffoldKey: _scaffoldKey,),
         body: SizedBox(
           width: double.infinity,
           height: double.infinity,
           child: Stack(
             children: [
+
            SizedBox(
                 height: 45,
               ),
