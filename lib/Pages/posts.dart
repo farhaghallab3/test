@@ -1,10 +1,12 @@
-
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:grad_proj/Domain/customAppBar.dart';
-import 'package:grad_proj/Pages/createPost.dart';
-import 'package:grad_proj/pages/commentsPage.dart';
+import 'package:grad_proj/Domain/CustomNabBar.dart';
+import '../Domain/customAppBar.dart';
+import 'menu.dart';
+import 'commentsPage.dart';
+import 'createPost.dart';
+
 
 
 class Posts extends StatefulWidget {
@@ -15,24 +17,20 @@ class Posts extends StatefulWidget {
 }
 
 class _CreatePostState extends State<Posts> {
-    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-         key: _scaffoldKey,
-       
-        appBar: 
-          CustomAppBar(scaffoldKey: _scaffoldKey,showSearchBox: false,),
-         
-      
+        key: _scaffoldKey,
+        appBar: CustomNabBar(scaffoldKey: _scaffoldKey, showSearchBox: false,  arrowBack: false,),
+
         body: SizedBox(
           width: double.infinity,
           height: double.infinity,
           child: Stack(
             children: [
-                //post layer Open
               ListView(
                 padding: EdgeInsets.symmetric(vertical: 10),
                 children: [
@@ -41,43 +39,43 @@ class _CreatePostState extends State<Posts> {
                     proName: 'Ali Omar',
                     Date: ' 9 AM',
                     postText:
-                        'السلام عليكم, حد عارف ازاي انضف خرطوم مياه الصرف للحوض',
+                    'السلام عليكم, حد عارف ازاي انضف خرطوم مياه الصرف للحوض',
                     context: context,
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
                   FriendPost(
                     proPic: 'assets/images/profile.png',
                     proName: 'Mohamed Khaled',
                     Date: 'Today at 11:30 PM',
                     postText:
-                        'اهلا وسهلا, عندي مشكلة في حنفية المطبخ اريد سباك',
+                    'اهلا وسهلا, عندي مشكلة في حنفية المطبخ اريد سباك',
                     context: context,
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
                   FriendPost(
                     proPic: 'assets/images/profile.png',
                     proName: 'Ahmed Mohamed',
                     Date: 'Yesterday at 11:30 AM',
                     postText:
-                        'السلام عليكم, حد عارف ازاي انضف خرطوم مياه الصرف للحوض',
+                    'السلام عليكم, حد عارف ازاي انضف خرطوم مياه الصرف للحوض',
                     context: context,
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
                   FriendPost(
                     proPic: 'assets/images/profile.png',
                     proName: 'Amira samir',
                     Date: 'Yesterday at 8:30 AM',
                     postText:
-                        'اهلا وسهلا, عندي مشكلة في حنفية المطبخ اريد سباك',
+                    'اهلا وسهلا, عندي مشكلة في حنفية المطبخ اريد سباك',
                     context: context,
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
                   FriendPost(
                     proPic: 'assets/images/profile.png',
                     proName: 'Marwan Mostafa',
                     Date: 'Monday at 7:30 AM',
                     postText:
-                        'السلام عليكم, حد عارف ازاي انضف خرطوم مياه الصرف للحوض',
+                    'السلام عليكم, حد عارف ازاي انضف خرطوم مياه الصرف للحوض',
                     context: context,
                   ),
                 ],
@@ -86,19 +84,19 @@ class _CreatePostState extends State<Posts> {
             ],
           ),
         ),
-         floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const CreatePost()));
-        },
-        backgroundColor: const Color(0xFFBBA2BF),
-        shape: const CircleBorder(),
-        child: const Icon(Icons.add),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
         drawer: Menu(
           scaffoldKey: _scaffoldKey,
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const CreatePost()));
+          },
+          backgroundColor: const Color(0xFFBBA2BF),
+          shape: const CircleBorder(),
+          child: const Icon(Icons.add_circle),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       ),
     );
   }
@@ -110,13 +108,14 @@ class FriendPost extends StatefulWidget {
   final String Date;
   final String postText;
   final BuildContext context;
+
   const FriendPost(
       {Key? key,
-      required this.proPic,
-      required this.proName,
-      required this.Date,
-      required this.postText,
-      required this.context})
+        required this.proPic,
+        required this.proName,
+        required this.Date,
+        required this.postText,
+        required this.context})
       : super(key: key);
 
   @override
@@ -180,7 +179,7 @@ class _FriendPostState extends State<FriendPost> {
             ],
           ),
         ),
-        SizedBox(height: 20),
+        SizedBox(height: 10),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Row(
