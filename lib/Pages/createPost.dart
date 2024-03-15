@@ -1,12 +1,18 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, unused_import, must_be_immutable
+// ignore: deprecated_member_use
+import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:grad_proj/Domain/CustomNabBar.dart';
+import 'package:grad_proj/Domain/workerAppBar.dart';
+import 'package:grad_proj/Pages/pagesWorker/menuw.dart';
 import 'package:grad_proj/Pages/posts.dart';
+import 'package:grad_proj/Pages/menu.dart';
 
 
-import '../Domain/customAppBar.dart';
-import 'menu.dart';
+import 'package:grad_proj/Domain/customAppBar.dart';
+
 
 
 
@@ -23,19 +29,23 @@ class _CreatePostState extends State<CreatePost> {
 
   get bottomNavigationBar => null;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  final GlobalKey<ScaffoldState> _scaffoldKeyw = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
         key: _scaffoldKey,
-        appBar: CustomAppBar(scaffoldKey: _scaffoldKey,
-          showSearchBox: false,),
+
+        appBar: CustomNabBar(scaffoldKey: _scaffoldKey, showSearchBox: false,arrowBack: true,),
+
+
         body: SizedBox(
           width: double.infinity,
           height: double.infinity,
           child: Stack(
             children: [
+
               //purple foreground
               // Positioned(
               //   top: 0,
@@ -190,8 +200,9 @@ class _CreatePostState extends State<CreatePost> {
             ],
           ),
         ),
-        drawer: Menu(scaffoldKey: _scaffoldKey),
-      ),
+       // drawer: Menu(scaffoldKey: _scaffoldKey),
+    ),
+
     );
   }
 
